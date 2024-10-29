@@ -1,10 +1,14 @@
 # The function efficiently finds the pair in O(n) time complexity, taking advantage of the sorted property of the array.
 def find_pair_with_sum(arr, target):
+    # Step 1: Sort the array
+    # arr.sort()    sorting step makes it slightly less efficient than directly applying the two-pointer technique to a sorted array
+
     # Initialize two pointers
     left = 0
     right = len(arr) - 1
 
     # Traverse the array with the two pointers
+    # The function efficiently finds the pair in O(n) time complexity, taking advantage of the sorted property of the array.
     while left < right:
         current_sum = arr[left] + arr[right]
 

@@ -1,7 +1,7 @@
 from collections import deque
 
 
-# BFS function
+# Breadth First-search (BFS) function
 def bfs(graph, start):
     visited = set()  # To keep track of visited nodes
     queue = deque([start])  # Queue to manage the BFS process
