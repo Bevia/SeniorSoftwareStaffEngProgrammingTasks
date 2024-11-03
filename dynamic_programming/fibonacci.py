@@ -5,7 +5,7 @@
 
 # recursive approach
 def fib_recursive(n):
-    if n <= 1:
+    if n <= 1:  # base cases are 0 and 1
         return n
     return fib_recursive(n - 1) + fib_recursive(n - 2)
 
@@ -14,12 +14,14 @@ def fib_recursive(n):
 # resulting in exponential time complexity O(2^n). Memoization improves this to
 # linear time complexity O(n) by storing and reusing results.
 # Using memoization (top-down approach):
+# memo={} is an empty dictionary
 def fib_memoization(n, memo={}):
     if n in memo:
         return memo[n]
     if n <= 1:
         return n
     # memo[10] = fib_memoization(9) + fib_memoization(8)
+    # this is actually the formula: F(n) = F(n-1) + F(n-2)
     memo[n] = fib_memoization(n - 1, memo) + fib_memoization(n - 2, memo)
     return memo[n]
 
@@ -31,15 +33,15 @@ def fib_memoization(n, memo={}):
 def fib_tabulation(n):
     if n <= 1:
         return n
-    fib_table = [0] * (n + 1)
-    fib_table[1] = 1
-    for i in range(2, n + 1):
+    fib_table = [0] * (n + 1) # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
+    fib_table[1] = 1 # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
+    for i in range(2, n + 1):   # starts a loop that iteratively fills in the fib_table list from index 2 up to n
         fib_table[i] = fib_table[i - 1] + fib_table[i - 2]
     return fib_table[n]
 
 
 if __name__ == '__main__':
-    n = 10
+    n = 6
     print(f"Fibonacci Recursive({n}) = {fib_recursive(n)}")
     print(f"Fibonacci Memoization({n}) = {fib_memoization(n)}")
     print(f"Fibonacci Tabulation({n}) = {fib_tabulation(n)}")
