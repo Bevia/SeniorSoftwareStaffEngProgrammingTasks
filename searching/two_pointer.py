@@ -31,6 +31,7 @@ def find_pairs_with_sum(arr, target):
 
     return result
 
+
 arr = [1, 2, 3, 4, 5, 6, 7]
-target = 3
+target = 8
 print(find_pairs_with_sum(arr, target))
