@@ -1,5 +1,6 @@
 from collections import deque, defaultdict
 
+
 # The Aho-Corasick algorithm is a powerful string-matching algorithm used
 # to search for multiple “patterns” or “keywords” in a single scan of a
 # given “text.” It is especially efficient when searching for many
@@ -63,6 +64,7 @@ class AhoCorasick:
                 matches.append((pattern, i - len(pattern) + 1, i))
 
         return matches
+
 
 # Example usage
 patterns = ["he", "she", "his", "hers"]
