@@ -1,8 +1,12 @@
-#Here’s a classic two-pointer algorithm example in Python: finding pairs in a sorted array that sum up to a given target. This approach is efficient with a time complexity of O(n), making it ideal for scenarios where you need to find pairs without using nested loops.
+# Here’s a classic two-pointer algorithm example in Python:
+# finding pairs in a sorted array that sum up to a given target.
+# This approach is efficient with a time complexity of O(n),
+# making it ideal for scenarios where you need to find pairs without using nested loops.
 
-#Problem Statement
+# Problem Statement
 
-#Given a sorted array of integers and a target sum, find all unique pairs in the array that add up to the target sum.
+# Given a sorted array of integers and a target sum,
+# find all unique pairs in the array that add up to the target sum.
 
 def find_pairs_with_sum(arr, target):
     left, right = 0, len(arr) - 1
