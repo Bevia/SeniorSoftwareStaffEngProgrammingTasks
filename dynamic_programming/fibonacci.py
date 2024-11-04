@@ -33,8 +33,8 @@ def fib_memoization(n, memo={}):
 def fib_tabulation(n):
     if n <= 1:
         return n
-    fib_table = [0] * (n + 1) # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
-    fib_table[1] = 1 # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
+    fib_table = [0] * (n + 1)  # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
+    fib_table[1] = 1  # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
     for i in range(2, n + 1):   # starts a loop that iteratively fills in the fib_table list from index 2 up to n
         fib_table[i] = fib_table[i - 1] + fib_table[i - 2]
     return fib_table[n]
