@@ -11,10 +11,8 @@
 def find_pairs_with_sum(arr, target):
     left, right = 0, len(arr) - 1
     result = []
-
     while left < right:
         current_sum = arr[left] + arr[right]
-
         if current_sum == target:
             result.append((arr[left], arr[right]))
             left += 1

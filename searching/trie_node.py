@@ -17,6 +17,7 @@ class TrieNode:
         self.children = {}
         self.is_end_of_word = False
 
+
 class Trie:
     def __init__(self):
         # The root of the trie is an empty TrieNode
