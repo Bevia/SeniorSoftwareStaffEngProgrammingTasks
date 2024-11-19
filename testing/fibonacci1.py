@@ -6,11 +6,15 @@ def fibonacci(n):
 
 
 def memoization(n, memo={}):
+    # Check if the result for n is already cached
     if n in memo:
         return memo[n]
+
+    # Base case: trivial Fibonacci values
     if n <= 1:
         return n
 
+    # Recursive calculation with memoization
     memo[n] = memoization(n - 1, memo) + memoization(n - 2, memo)
     return memo[n]
 

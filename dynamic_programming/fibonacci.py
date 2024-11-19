@@ -40,8 +40,21 @@ def fib_tabulation(n):
     return fib_table[n]
 
 
+# If you want to reduce the space complexity to  O(1) ,
+# you can avoid storing the entire table and only
+# keep the last two Fibonacci numbers:
+def fib_optimized(n):
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+
 if __name__ == '__main__':
-    n = 6
+    n = 8
     print(f"Fibonacci Recursive({n}) = {fib_recursive(n)}")
     print(f"Fibonacci Memoization({n}) = {fib_memoization(n)}")
     print(f"Fibonacci Tabulation({n}) = {fib_tabulation(n)}")
+    print(f"Fibonacci Optimize({n}) = {fib_optimized(n)}")
