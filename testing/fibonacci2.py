@@ -12,13 +12,15 @@
 # 	•	 n = 5 : 15 calls.
 # 	•	 n = 6 : 29 calls.
 
-def find_fibonacci(n):
-    # base case
+# 1,1,2,3,5,8,13 ....
+
+def fibonacci(n):
     if n <= 1:
         return n
-    return find_fibonacci(n - 1) + find_fibonacci(n - 2)
+
+    return fibonacci(n-1) + fibonacci(n-2)
 
 
-n = 6
-result = find_fibonacci(n)
-print(f"fibonacci sequence for {n} is {result}")
+n = 7
+result = fibonacci(n)
+print(f"the sequence result for {n} is {result}")
