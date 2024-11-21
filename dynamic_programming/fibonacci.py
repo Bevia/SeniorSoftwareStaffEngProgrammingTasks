@@ -34,14 +34,25 @@ def fib_tabulation(n):
     # base case:
     if n <= 1:
         return n
+    # fib_table repeats the list [0] a total of  n+1  times, effectively creating a list of  n+1  zeros.
     fib_table = [0] * (n + 1)  # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
     fib_table[1] = 1  # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
     for i in range(2, n + 1):   # starts a loop that iteratively fills in the fib_table list from index 2 up to n
         fib_table[i] = fib_table[i - 1] + fib_table[i - 2]
     return fib_table[n]
 
+# Execution Flow Example for n = 5
+#
+# 	1.	Initialization: fib_table = [0, 1, 0, 0, 0, 0]
+# 	2.	Loop Iterations:
+# 	•	i = 2: Compute  fib_table[2] = fib_table[1] + fib_table[0] = 1 + 0 = 1  → fib_table = [0, 1, 1, 0, 0, 0]
+# 	•	i = 3: Compute  fib_table[3] = fib_table[2] + fib_table[1] = 1 + 1 = 2  → fib_table = [0, 1, 1, 2, 0, 0]
+# 	•	i = 4: Compute  fib_table[4] = fib_table[3] + fib_table[2] = 2 + 1 = 3  → fib_table = [0, 1, 1, 2, 3, 0]
+# 	•	i = 5: Compute  fib_table[5] = fib_table[4] + fib_table[3] = 3 + 2 = 5  → fib_table = [0, 1, 1, 2, 3, 5]
+# 	3.	Return:  fib_table[5] = 5
 
-# If you want to reduce the space complexity to  O(1) ,
+# alternatively:
+# if you want to reduce the space complexity to  O(1) ,
 # you can avoid storing the entire table and only
 # keep the last two Fibonacci numbers:
 def fib_optimized(n):
@@ -54,7 +65,7 @@ def fib_optimized(n):
 
 
 if __name__ == '__main__':
-    n = 8
+    n = 3
     print(f"Fibonacci Recursive({n}) = {fib_recursive(n)}")
     print(f"Fibonacci Memoization({n}) = {fib_memoization(n)}")
     print(f"Fibonacci Tabulation({n}) = {fib_tabulation(n)}")
