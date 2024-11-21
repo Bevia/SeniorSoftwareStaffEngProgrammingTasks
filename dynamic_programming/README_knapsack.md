@@ -1,6 +1,7 @@
 ### The Knapsack Problem algorithm
 
-The Knapsack Problem algorithm can be applied in various real-world software solutions where optimization under constraints is required. Here are some examples:
+The Knapsack Problem algorithm can be applied in various real-world software 
+solutions where optimization under constraints is required. Here are some examples:
 
 1. Resource Allocation and Project Management
 
