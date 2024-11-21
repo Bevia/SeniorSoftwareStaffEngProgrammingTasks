@@ -1,4 +1,7 @@
 # Function to solve the knapsack problem
+# The Knapsack Problem algorithm can be applied in various real-world software
+# solutions where optimization under constraints is required.
+
 def knapsack(weights, values, capacity):
     # Number of items
     n = len(values)
@@ -27,3 +30,4 @@ capacity = 5  # Capacity of the knapsack
 # Find the maximum value we can fit in the knapsack
 max_value = knapsack(weights, values, capacity)
 print("Maximum value in Knapsack =", max_value)
+
