@@ -31,6 +31,7 @@ def fib_memoization(n, memo={}):
 # Uses a table to store each computed Fibonacci number, which allows it to access previously computed values instantly.
 # Is efficient in terms of both time (O(n)) and memory (O(n)) compared to the naive recursive approach.
 def fib_tabulation(n):
+    # base case:
     if n <= 1:
         return n
     fib_table = [0] * (n + 1)  # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
