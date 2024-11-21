@@ -52,7 +52,7 @@ def fib_tabulation(n):
 # 	3.	Return:  fib_table[5] = 5
 
 
-# alternatively:
+# alternatively: space-optimized version
 # if you want to reduce the space complexity to  O(1) ,
 # you can avoid storing the entire table and only
 # keep the last two Fibonacci numbers:
@@ -63,6 +63,15 @@ def fib_optimized(n):
     for _ in range(2, n + 1):
         a, b = b, a + b
     return b
+
+# Why Is This Efficient?
+#
+# 	1.	Time Complexity:  O(n)
+# 	•	The loop iterates  n-1  times.
+# 	2.	Space Complexity:  O(1)
+# 	•	Only two variables (a and b) are used, regardless of the value of  n .
+#
+# This approach is ideal for scenarios where memory efficiency is critical.
 
 
 if __name__ == '__main__':
