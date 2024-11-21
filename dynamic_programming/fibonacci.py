@@ -51,6 +51,7 @@ def fib_tabulation(n):
 # 	•	i = 5: Compute  fib_table[5] = fib_table[4] + fib_table[3] = 3 + 2 = 5  → fib_table = [0, 1, 1, 2, 3, 5]
 # 	3.	Return:  fib_table[5] = 5
 
+
 # alternatively:
 # if you want to reduce the space complexity to  O(1) ,
 # you can avoid storing the entire table and only
