@@ -9,6 +9,7 @@ def binary_search(array, target):
             left = mid + 1
         else:
             right = mid - 1
+            """Returns the index of 'target' in 'arr', or None if not found."""
     return None
 
 def main():

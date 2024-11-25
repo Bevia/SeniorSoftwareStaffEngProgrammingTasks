@@ -45,9 +45,9 @@ def find_pair(arr, target):
             current_pair.append((arr[left], arr[right]))
             left += 1
             right -= 1
-            while left < right and arr[left] == arr[left + 1]:
+            while left < right and arr[left] == arr[left - 1]:
                 left += 1
-            while left < right and arr[right] == arr[right - 1]:
+            while left < right and arr[right] == arr[right + 1]:
                 right -= 1
             # return arr[left], arr[right]
         elif current_sum < target:
@@ -88,6 +88,7 @@ target = 5
 
 
 def binary_search(arr, target):
+    """Returns the index of 'target' in 'arr', or -1 if not found."""
     left, right = 0, len(arr) - 1
     while left <= right:
         mid = left + (right - left) // 2
@@ -104,3 +105,9 @@ result = binary_search(arr, target)
 print(f"the index for value {target} is {result}")
 
 # DONE: VB
+# test result 9 our of 10, this was wrong:
+#             while left < right and arr[left] == arr[left + 1]:
+#                 left += 1
+#             while left < right and arr[right] == arr[right - 1]:
+#                 right -= 1
+# has been corrected in code!
