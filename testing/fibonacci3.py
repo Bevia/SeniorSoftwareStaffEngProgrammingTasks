@@ -27,7 +27,7 @@ def tabulation(n):
     fib_tab[1] = 1
     for i in range(2, n + 1):
         fib_tab[i] = fib_tab[i-1] + fib_tab[i-2]
-    return fib_tab[n]
+    return fib_tab[n]  # After all iterations,  fib_table[5]  contains the 5th Fibonacci number, which is 5.
 
 
 # Execution Flow Example for n = 5
