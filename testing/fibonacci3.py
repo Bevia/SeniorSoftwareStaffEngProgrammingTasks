@@ -1,8 +1,21 @@
-# Recursive Naive
+# Recursive Naive which has a time complexity of O(2^n)
+# Without memoization, the naive Fibonacci function would have
+# a time complexity of  O(2^n)  due to the exponential
+# growth of recursive calls.
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1)+fibonacci(n-2)
 
 
-# Memoization
-
+# Memoization which has a time complexity of O(n)
+def memoization(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 1:
+        return n
+    memo[n] = memoization(n-1, memo)+memoization(n-2, memo)
+    return memo[n]
 
 # Tabulation
 
@@ -19,6 +32,9 @@
 
 # Client goes here:
 
+n = 8
+result = memoization(n)
+print(f"the fibonacci series for {n} is {result}")
 
 # 1,2,3,4,5,6, 7, 8, 9
 # 1,1,2,3,5,8,13,21,34
