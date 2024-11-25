@@ -1,23 +1,11 @@
-def memoization(n, memo={}):
-    if n in memo:
-        return memo[n]
-
-    if n <= 1:
-        return n
-
-    memo[n] = memoization(n-1, memo) + memoization(n-2, memo)
-    return memo[n]
+# Recursive Naive
 
 
-def tabulation(n):
-    if n <= 1:
-        return n
+# Memoization
 
-    fib_table = [0] * (n + 1)
-    fib_table[1] = 1
-    for i in range(2, n + 1):
-        fib_table[i] = tabulation(i-1) + tabulation(i-2)
-    return fib_table[n]
+
+# Tabulation
+
 
 # Execution Flow Example for n = 5
 #
@@ -29,10 +17,8 @@ def tabulation(n):
 # 	•	i = 5: Compute  fib_table[5] = fib_table[4] + fib_table[3] = 3 + 2 = 5  → fib_table = [0, 1, 1, 2, 3, 5]
 # 	3.	Return:  fib_table[5] = 5
 
+# Client goes here:
 
-n = 9
-result = tabulation(n)
-print(f"the fibonacci sequence of {n} is {result}")
 
 # 1,2,3,4,5,6, 7, 8, 9
 # 1,1,2,3,5,8,13,21,34
