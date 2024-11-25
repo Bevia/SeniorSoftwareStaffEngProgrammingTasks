@@ -1,3 +1,4 @@
+# Find the fibonacci number for input n
 # Recursive Naive which has a time complexity of O(2^n)
 # Without memoization, the naive Fibonacci function would have
 # a time complexity of  O(2^n)  due to the exponential
@@ -17,7 +18,16 @@ def memoization(n, memo={}):
     memo[n] = memoization(n-1, memo)+memoization(n-2, memo)
     return memo[n]
 
+
 # Tabulation
+def tabulation(n):
+    if n <= 1:
+        return n
+    fib_tab = [0] * (n + 1)
+    fib_tab[1] = 1
+    for i in range(2, n + 1):
+        fib_tab[i] = fib_tab[i-1] + fib_tab[i-2]
+    return fib_tab[n]
 
 
 # Execution Flow Example for n = 5
@@ -33,7 +43,7 @@ def memoization(n, memo={}):
 # Client goes here:
 
 n = 8
-result = memoization(n)
+result = tabulation(n)
 print(f"the fibonacci series for {n} is {result}")
 
 # 1,2,3,4,5,6, 7, 8, 9
