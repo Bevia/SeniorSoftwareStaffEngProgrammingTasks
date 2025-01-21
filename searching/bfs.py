@@ -32,4 +32,4 @@ graph = {
 }
 
 # Run BFS
-bfs(graph, 'A')
+bfs(graph, 'D')
