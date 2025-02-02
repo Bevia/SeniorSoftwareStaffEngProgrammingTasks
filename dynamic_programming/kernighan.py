@@ -39,6 +39,6 @@ def count_set_bits_2(n):
 
 
 # Example usage
-n = 13
+n = 23
 print(f"The number of set bits in {n} (binary: {bin(n)[2:]}) is {count_set_bits_1(n)}")
 print(f"The number of set bits in {n} (binary: {bin(n)[2:]}) is {count_set_bits_2(n)}")
