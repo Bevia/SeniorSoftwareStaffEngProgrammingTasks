@@ -36,10 +36,12 @@ def fib_tabulation(n):
         return n
     # fib_table repeats the list [0] a total of  n+1  times, effectively creating a list of  n+1  zeros.
     fib_table = [0] * (n + 1)  # for example for n = 5 we have this: fib_table = [0, 0, 0, 0, 0, 0]
-    fib_table[1] = 1  # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
-    for i in range(2, n + 1):   # starts a loop that iteratively fills in the fib_table list from index 2 up to n
+    fib_table[
+        1] = 1  # sets the value of fib_table[1] to 1 because this is one of the base cases of the Fibonacci sequence
+    for i in range(2, n + 1):  # starts a loop that iteratively fills in the fib_table list from index 2 up to n
         fib_table[i] = fib_table[i - 1] + fib_table[i - 2]
     return fib_table[n]
+
 
 # Execution Flow Example for n = 5
 #
@@ -64,7 +66,8 @@ def fib_optimized(n):
         a, b = b, a + b
     return b
 
-# Why Is This Efficient?
+
+# Why Is fib_optimized Efficient?
 #
 # 	1.	Time Complexity:  O(n)
 # 	•	The loop iterates  n-1  times.
@@ -73,6 +76,15 @@ def fib_optimized(n):
 #
 # This approach is ideal for scenarios where memory efficiency is critical.
 
+# Dynamic programming way:
+def fibonacci_dp(n):
+    if n <= 1:
+        return n
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append(fib[i - 1] + fib[i - 2])
+    return fib[n]
+
 
 if __name__ == '__main__':
     n = 3
@@ -80,3 +92,4 @@ if __name__ == '__main__':
     print(f"Fibonacci Memoization({n}) = {fib_memoization(n)}")
     print(f"Fibonacci Tabulation({n}) = {fib_tabulation(n)}")
     print(f"Fibonacci Optimize({n}) = {fib_optimized(n)}")
+    print(f"Fibonacci Dynamic Programming({n}) = {fibonacci_dp(n)}")
